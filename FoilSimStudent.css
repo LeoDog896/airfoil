@@ -1,0 +1,317 @@
+
+
+html{
+
+    background-color: white;
+   
+}
+
+
+
+.slidecontainer{
+
+    width:100%;
+   
+
+}
+
+.slider1{
+
+    -webkit-appearance: none;
+    position:absolute;
+    left:55px;
+    width: 70%;
+    height: 25px;
+    background: #b6a7a7;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider1:hover {
+    opacity: 1;
+  }
+
+  .slider1::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: rgb(232, 235, 232);
+    cursor: pointer;
+  }
+  
+  .slider1::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: rgb(204, 212, 205);
+    cursor: pointer;
+  }
+
+  .slidecontainer{
+
+    width:100%;
+
+}
+
+.slider2{
+
+    -webkit-appearance: none;
+    position: absolute;
+    left:55px;
+    width: 70%;
+    height: 25px;
+    background: #b6a7a7;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider2:hover {
+    opacity: 1;
+  }
+
+  .slider2::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: rgb(237, 243, 237);
+    cursor: pointer;
+  }
+  
+  .slider2::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: rgb(218, 223, 218);
+    cursor: pointer;
+  }
+
+
+  .slidecontainer{
+
+    width:100%;
+
+}
+
+.slider3{
+
+    -webkit-appearance: none;
+    width: 85%;
+    height: 25px;
+    background: #b6a7a7;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    left:30px;
+}
+
+.slider3:hover {
+    opacity: 1;
+  }
+
+  .slider3::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: rgb(238, 241, 238);
+    cursor: pointer;
+  }
+  
+  .slider3::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: #4CAF50;
+    cursor: pointer;
+  }
+
+
+
+.container{
+
+    position:relative;
+    background-color: lightgrey;
+    left:-30px;
+    top:-20px;
+    width: 800px;
+    height: 700px;
+    border: 10px solid grey;
+    padding: 30px;
+    margin: 25px;
+    
+
+}
+
+canvas{
+
+    border:1px solid #c3c3c3;
+    
+
+
+}
+
+.sketchHolder{
+
+    position:absolute;
+    background-color:black;
+    width: 300px;
+    height: 200px;
+    border: 2px solid grey;
+    padding: 30px;
+    margin: 25px;
+    top:0px;
+
+
+
+}
+
+
+
+.box{
+
+    position:absolute;
+    background-color:lightgrey;
+    width: 300px;
+    height: 150px;
+    border: 2px solid grey;
+    padding: 30px;
+    margin: 25px;
+    top:0px;
+}
+
+.box2{
+
+    position:absolute;
+    background-color: lightgrey;
+    width: 360px;
+    height: 220px;
+    border: 2px solid grey;
+    padding: 30px;
+    margin: 25px;
+    left:400px;
+    top:0px; 
+    
+
+
+}
+
+.box3{
+
+
+    position:absolute;
+    background-color: lightgrey;
+    width: 300px;
+    height: 400px;
+    border: 2px solid grey;
+    padding: 30px;
+    margin: 25px;
+    top:260px;
+
+
+}
+
+.box4{
+
+    position:absolute;
+    background-color: white;
+    width: 360px;
+    height:390px;
+    border: 2px solid grey;
+    padding: 30px;
+    margin: 25px;
+    left:400px;
+    top:280px; 
+    overflow: auto;
+    
+
+}
+
+.unitsdropdown {
+    position: relative;
+    display: inline-block;
+    left:10px;
+}
+
+.dropbtn {
+  background-color: #3498DB;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+
+.dropbtn1 {
+    background-color: white;
+    color:black;
+    padding: 5px;
+    font-size: 16px;
+    width:200px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn2 {
+    background-color: white;
+    color:black;
+    padding: 5px;
+    font-size: 16px;
+    width:100px;
+    border: none;
+    cursor: pointer;
+}
+
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #2980B9;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    left:30px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
+
+
+.angleScroll{
+
+    position: absolute;
+    overflow-x: scroll;
+    width: 60px;
+    left: 200px;
+    top: 80px;
+    
+}
+
+.angleText{
+
+    position: relative;
+    width: 80px;
+
+}
