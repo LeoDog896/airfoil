@@ -228,7 +228,7 @@ function outputAirfoil() {
     document.getElementById("camberBox").innerHTML = String(altitude);
   } else if (
     shapeSelect >= 4 &&
-    (document.getElementById("airfoilLabel").innerHTML == "Cylinder In:" ||
+    (document.getElementById("airfoilLabel").innerHTML == "Cylinder Input:" ||
       document.getElementById("airfoilLabel").innerHTML == "Ball Input:")
   ) {
     spin = slider1;
@@ -970,7 +970,7 @@ function outputAirfoil() {
     var lVersusDrag = document.getElementById("ratioBox");
     lVersusDrag.value = String(cylinder.getLiftOverDrag().toFixed(3));
 
-    if (document.getElementById("airfoilLabel").innerHTML == "Cylinder In:") {
+    if (document.getElementById("airfoilLabel").innerHTML == "Cylinder Input:") {
       var slider1 = document.getElementById("slider1");
       slider1.min = String(cylinder.getSpinMn().toFixed(2));
       slider1.max = String(cylinder.getSpinMx().toFixed(2));
@@ -1936,7 +1936,7 @@ function shapeButton() {
   if (clicks == 0) shapeSelect = 1;
 
   if (shapeSelect < 4) airLabel("airfoilLabel", "Airfoil Shape:", true);
-  else if (shapeSelect == 4) airLabel("airfoilLabel", "Cylinder In:", true);
+  else if (shapeSelect == 4) airLabel("airfoilLabel", "Cylinder Input:", true);
   else if (shapeSelect == 5) airLabel("airfoilLabel", "Ball Input:", true);
 
   buttonText1("buttonText1", "airfoil");
@@ -2618,7 +2618,7 @@ function cylinderClicked() {
   document.getElementById("box3").style.visibility = "hidden";
 
   var airLabel = document.getElementById("airfoilLabel");
-  airLabel.innerHTML = "Cylinder In:";
+  airLabel.innerHTML = "Cylinder Input:";
   airLabel.style.visibility = "visible";
 
   var angleLabel = document.getElementById("angleLabel");
