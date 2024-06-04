@@ -1,261 +1,318 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset = "utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link rel = "stylesheet" href = ".\FoilSimStudent.css">
-   
-   
+    <link rel="stylesheet" href=".\FoilSimStudent.css" />
+
     <title>Foil Sim</title>
-</head>
-<body onload = "shapeButton();changeButtonText('unitsButton','english ▼')" id = "body">
+  </head>
+  <body
+    onload="shapeButton();changeButtonText('unitsButton','english ▼')"
+    id="body"
+  >
+    <div class="container">
+      <div id="airFoilSketch-holder" class="sketchHolder"></div>
+      <div class="box2" id="box2">
+        <label style="color: red">FoilSim JS</label>
+        &nbsp; &nbsp;
 
-    <div class = "container">
-    
-
-    <div id = "airFoilSketch-holder" class = "sketchHolder">
-
-        
-        
-
-    </div>
-    <div class = "box2" id = "box2">
-
-        <label style = "color:red">FoilSim JS</label>
-        &nbsp;
-        &nbsp;
-      
         <label>Units: </label>
-        <div class = "unitsdropdown">
-        <button id = "unitsButton" onclick = "unitsChange();shapeButton()" class = "dropbtn2">english ▼ </button>
-        <div id = "unitsDropdown" class = "dropdown-content">
-            <a onclick = "changeButtonText('unitsButton','english ▼'),imperialUnits();shapeButton()" href="#english">english</a>
-            <a onclick = "changeButtonText('unitsButton','metric ▼'),metricUnits();shapeButton()" href="#metric">metric</a>
-            </div>
+        <div class="unitsdropdown">
+          <button
+            id="unitsButton"
+            onclick="unitsChange();shapeButton()"
+            class="dropbtn2"
+          >
+            english ▼
+          </button>
+          <div id="unitsDropdown" class="dropdown-content">
+            <a
+              onclick="changeButtonText('unitsButton','english ▼'),imperialUnits();shapeButton()"
+              href="#english"
+              >english</a
+            >
+            <a
+              onclick="changeButtonText('unitsButton','metric ▼'),metricUnits();shapeButton()"
+              href="#metric"
+              >metric</a
+            >
+          </div>
         </div>
 
+        &nbsp; &nbsp; &nbsp;
+        <input
+          id="reset"
+          onclick="reset()"
+          style="background-color: red"
+          value="reset"
+          type="button"
+        />
 
-         &nbsp;
-        &nbsp;
-        &nbsp;
-         <input id = "reset" onclick = "reset()" style = "background-color:red" value = "reset" type = "button">
+        <br />
+        <br />
+        <label style="color: blue"> Input</label>
+        <input
+          id="flightButton"
+          value="Flight"
+          style="color: blue"
+          type="button"
+          onclick="flightButton();"
+        />
+        <input
+          id="shapeButton"
+          value="Shape"
+          style="color: blue"
+          type="button"
+          onclick="shapeButton();"
+        />
+        <input
+          id="analysisButton"
+          value="Analysis"
+          style="color: blue"
+          type="button"
+          onclick="analysisButton()"
+        />
+        <input
+          id="selectButton"
+          value="SelectPlot"
+          style="color: blue"
+          type="button"
+          onclick="selectPlotButton()"
+        />
+        <input
+          id="sizeButton"
+          value="Size"
+          style="color: blue"
+          type="button"
+          onclick="sizeButton()"
+        />
 
-         </br>
-         </br>
-            <input id = "flightButton" value = "Flight" style = "color:blue" type = "button" onclick = "flightButton();">
-            <input id = "shapeButton" value = "Shape" style = "color:blue" type = "button" onclick = "shapeButton();">
-             <input id = "analysisButton" value = "Analysis" style = "color:blue" type = "button" onclick = "analysisButton()">
-            <input id = "selectButton" value = "SelectPlot" style = "color:blue" type = "button" onclick = "selectPlotButton()">
-            <input id = "sizeButton" value = "Size" style = "color:blue" type = "button" onclick = "sizeButton()" >
-            <label style = "color:blue"> Input</label>
+        <br />
+        <br />
+        <!--<input id = "probeButton" value = "Probe" style = "color:red" type = "button" onclick = "probeButton()">-->
+        <label style="color: red">Output</label>
+        <input
+          id="geometryButton"
+          value="Geometry"
+          style="color: red"
+          type="button"
+          onclick="geometryButton()"
+        />
+        <input
+          id="dataButton"
+          value="Data"
+          style="color: red"
+          type="button"
+          onclick="dataButton()"
+        />
+        <input
+          id="gageButton"
+          value="Gages"
+          style="color: red"
+          type="button"
+          onclick="gageButton()"
+        />
+        <input
+          id="plotButton"
+          value="Plot"
+          style="color: red"
+          type="button"
+          onclick="plotButton()"
+        />
 
-            </br>
-         </br>
-            <!--<input id = "probeButton" value = "Probe" style = "color:red" type = "button" onclick = "probeButton()">-->
-            <input id = "geometryButton" value = "Geometry" style = "color:red" type = "button" onclick = "geometryButton()">
-            <input id = "dataButton" value = "Data" style = "color:red" type = "button" onclick = "dataButton()">
-            <input id = "gageButton" value = "Gages" style = "color:red" type = "button" onclick = "gageButton()">
-            <input id = "plotButton" value = "Plot" style = "color:red" type = "button" onclick = "plotButton()">
-            <label style = "color:red">Output</label>
-
-         </br>
-         </br>
+        <br />
+        <br />
         <label>Lift</label>
-        <input id = "liftBox" style = "width:80px" type = "text">
-        <label id = "liftLabel">lbs</label>
-        &nbsp;
-        &nbsp;
+        <input id="liftBox" style="width: 80px" type="text" />
+        <label id="liftLabel">lbs</label>
+        &nbsp; &nbsp;
         <label>Drag</label>
-        <input id ="dragBox" style = "width:80px" type = "text">
-        <label id = "dragLabel">lbs</label>
+        <input id="dragBox" style="width: 80px" type="text" />
+        <label id="dragLabel">lbs</label>
 
-          </br>
-</br>
+        <br />
+        <br />
 
         <label>CLift</label>
-        <input id = "cLiftBox" style = "width:70px" type = "text">
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
+        <input id="cLiftBox" style="width: 70px" type="text" />
+        &nbsp; &nbsp; &nbsp; &nbsp;
         <label>CDrag</label>
-        <input id ="cDragBox" style = "width:80px" type = "text">
+        <input id="cDragBox" style="width: 80px" type="text" />
 
-        </br>
-</br>
+        <br />
+        <br />
 
         <label>R#</label>
-        <input id = "reynoldBox" style = "width:80px;" type = "text">
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        &nbsp;
+        <input id="reynoldBox" style="width: 80px" type="text" />
+        &nbsp; &nbsp; &nbsp; &nbsp;
         <label>L/D ratio</label>
-        <input id ="ratioBox" style = "width:80px" type = "text">
-            
-            
+        <input id="ratioBox" style="width: 80px" type="text" />
+      </div>
 
+      <div class="box3" id="box3">
+        <label id="airfoilLabel" style="color: blue">Airfoil Shape:</label>
+        <div class="dropdown">
+          <button id="button1" onclick="airfoilShape()" class="dropbtn1">
+            airfoil ▼
+          </button>
+          <div id="airfoilDropdown" class="dropdown-content">
+            <a id="link1" href="#airfoil"><p id="buttonText1">airfoil</p></a>
+            <a id="link2" href="#ellipse">ellipse</a>
+            <a id="link3" href="#plate">plate</a>
+            <a id="link4" href="#cylinder">cylinder</a>
+            <a id="link5" href="#ball">ball</a>
+          </div>
+        </div>
 
+        <br />
+        <br />
+
+        <div class="slidecontainer" id="slideContainer1">
+          <label id="angleLabel">Angle-deg</label>
+          &nbsp; &nbsp; &nbsp; &nbsp;
+          <span id="angleBox">5.0</span>
+
+          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+
+          <br />
+          <button
+            type="button"
+            style="height: 28px; position: absolute"
+            id="stepDownSlider1"
+            onclick="stepDownSlider1();"
+          >
+            ◄
+          </button>
+          <input
+            id="slider1"
+            type="range"
+            name="angleSlider"
+            step="0.1"
+            value="5.0"
+            min="-20"
+            max="20"
+            class="slider1"
+            onchange="showVal('angleBox',this.value)"
+          />
+          <button
+            type="button"
+            style="height: 28px; position: absolute; left: 300px"
+            id="stepUpSlider1"
+            onclick="stepUpSlider1();"
+          >
+            ►
+          </button>
+        </div>
+
+        <br />
+        <br />
+
+        <div class="slidecontainer" id="slideContainer2">
+          <label id="camberLabel">Camber-%c</label>
+          &nbsp; &nbsp; &nbsp;
+          <span id="camberBox">0.0</span>
+
+          <br />
+          <button
+            type="button"
+            id="stepDownSlider2"
+            onclick="stepDownSlider2()"
+            style="height: 28px; position: absolute"
+          >
+            ◄
+          </button>
+          <input
+            id="slider2"
+            type="range"
+            name="camberSlider"
+            step="0.1"
+            value="0.0"
+            min="-20"
+            max="20"
+            class="slider2"
+            onchange="showVal('camberBox',this.value)"
+          />
+          <button
+            type="button"
+            id="stepUpSlider2"
+            onclick="stepUpSlider2()"
+            style="height: 28px; position: absolute; left: 300px"
+          >
+            ►
+          </button>
+        </div>
+        <br />
+        <br />
+
+        <label id="thickLabel">Thick-%c</label>
+        &nbsp; &nbsp; &nbsp; &nbsp;
+        <span id="thickBox">12.5</span>
+
+        &nbsp;
+
+        <input
+          id="slider3"
+          type="range"
+          name="thickSlider"
+          step="0.1"
+          value="12.5"
+          min="1"
+          max="20"
+          onchange="showVal('thickBox',this.value)"
+        />
+
+        <br />
+        <br />
+
+        <label id="basicLabel">Basic Shapes: </label>
+        &nbsp; &nbsp; &nbsp;
+        <input id="symmetricButton" type="button" value="Symmetric" />
+        <br />
+        <br />
+
+        <input id="highCamberButton" type="button" value="High Camber" />
+
+        &nbsp; &nbsp;
+
+        <input id="flatPlateButton" type="button" value="Flat Plate" />
+
+        &nbsp;
+
+        <input id="flatBottomButton" type="button" value="Flat Bottom" />
+
+        <br />
+        <br />
+
+        <input id="negCamberButton" type="button" value="Neg. Camber" />
+
+        &nbsp; &nbsp;
+
+        <input id="ellipseButton" type="button" value="Ellipse" />
+
+        &nbsp; &nbsp;
+
+        <input id="curvePlateButton" type="button" value="Curve Plate" />
+
+        &nbsp; &nbsp;
+      </div>
+
+      <div id="tester" class="box4" id="box4">
+        <p id="textArea"></p>
+      </div>
     </div>
 
-    <div class = "box3" id = "box3" >
-
-            <label id = "airfoilLabel" style = "color:blue">Airfoil Shape:</label>
-            <div class = "dropdown">
-            <button id = "button1" onclick = "airfoilShape()" class = "dropbtn1">airfoil ▼</button>
-            <div id = "airfoilDropdown" class = "dropdown-content">
-            <a id = "link1" href="#airfoil"><p id = "buttonText1">airfoil</p></a>
-            <a id = "link2" href="#ellipse">ellipse</a>
-            <a id = "link3" href="#plate">plate</a>
-            <a id = "link4" href="#cylinder">cylinder</a>
-            <a id = "link5" href="#ball">ball</a>
-            </div>
-            </div>
-
-            
-    </br>
-    </br>
-
-     <div class = "slidecontainer" id = "slideContainer1">
-            <label id = "angleLabel">Angle-deg</label>
-            &nbsp;
-            &nbsp;
-            &nbsp;
-            &nbsp;
-            <span id = "angleBox" >5.0</span>
-
-             &nbsp;
-            &nbsp;
-             &nbsp;
-            &nbsp;
-           
-
-            &nbsp;
-            &nbsp;
-            
-        </br>
-         <button type = "button" style = "height:28px;position:absolute" id = "stepDownSlider1" onclick = "stepDownSlider1();" >◄</button>
-            <input id = "slider1" type = "range" name = "angleSlider" step = "0.1" value = "5.0" min = "-20" max = "20" class = "slider1" onchange = "showVal('angleBox',this.value)" >
-            <button type = "button" style = "height:28px;position:absolute;left:300px;" id = "stepUpSlider1" onclick = "stepUpSlider1();" >►</button> 
-        </div>   
-         
-            
-            
-           
-            
-
-    </br>
-    </br>   
-    
-    <div class = "slidecontainer" id = "slideContainer2">
-            <label id ="camberLabel">Camber-%c</label>
-            &nbsp;
-            &nbsp;
-            &nbsp;
-            <span id = "camberBox" >0.0</span>
-
-            </br>
-            <button type = "button" id = "stepDownSlider2" onclick = "stepDownSlider2()" style = "height:28px;position:absolute;">◄</button>
-            <input id = "slider2" type = "range" name = "camberSlider" step = "0.1" value = "0.0" min = "-20" max = "20" class = "slider2" onchange = "showVal('camberBox',this.value)" >
-            <button type = "button" id = "stepUpSlider2" onclick = "stepUpSlider2()" style = "height:28px;position:absolute;left:300px;">►</button>
-    </div>
-    </br>
-    </br>
-    
-           <label id = "thickLabel">Thick-%c</label>
-            &nbsp;
-            &nbsp;
-            &nbsp;
-            &nbsp;
-            <span id = "thickBox" >12.5</span>
-
-          
-            &nbsp;
-            
-            <input id = "slider3" type = "range" name = "thickSlider" step = "0.1" value = "12.5" min = "1" max = "20"   onchange = "showVal('thickBox',this.value)" >
-   
-    </br>
-    </br>
-    
-     
-
-            <label id = "basicLabel">Basic Shapes: </label>
-            &nbsp;
-            &nbsp;
-            &nbsp; 
-            <input id ="symmetricButton" type = "button" value = "Symmetric" >
-        </br>
-    </br> 
-
-    <input id = "highCamberButton" type = "button" value = "High Camber" >
-
-    &nbsp;
-    &nbsp;
-
-     <input id = "flatPlateButton" type = "button" value = "Flat Plate" >
-
-    &nbsp;
-  
-
-     <input id = "flatBottomButton" type = "button" value = "Flat Bottom" >
-
-     </br>
-    </br>
-
-    <input id = "negCamberButton" type = "button" value = "Neg. Camber">
-
-    &nbsp;
-    &nbsp;
-
-     <input id = "ellipseButton" type = "button" value = "Ellipse">
-
-
-    &nbsp;
-    &nbsp;
-
-     <input id = "curvePlateButton" type = "button" value = "Curve Plate">
-
-
-    &nbsp;
-    &nbsp;
-          
-
-
-        
-
-    </div>
-
-    <div id = "tester"class = "box4" id = "box4" >
-
-    <p id = "textArea"></p>
-        
-   
-    
-    
-    </div>
-
-
-
-
-
-
-
-
-
-
-</div>
-
-    <script src = ".\FoilSimStudent_Calc.js"></script>
+    <script src=".\FoilSimStudent_Calc.js"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <script src = ".\StudentGUIComponents.js"></script>
-    <script src = ".\drawShape.js"></script>
-     <script src = ".\shapeCalc.js"></script>
-     <script src = ".\foilPlots.js"></script> 
+    <script src=".\StudentGUIComponents.js"></script>
+    <script src=".\drawShape.js"></script>
+    <script src=".\shapeCalc.js"></script>
+    <script src=".\foilPlots.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.16/p5.js"></script>
     <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.16/addons/p5.dom.js"></script> -->
-
-</body>
+  </body>
 </html>
-
-

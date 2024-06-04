@@ -72,7 +72,7 @@ var plv = [40];
 
 /**
  * The function setup
- * Called once when the program is started. Used to define initial enviroment properties such as screen size, background color, loading images, etc.
+ * Called once when the program is started. Used to define initial environment properties such as screen size, background color, loading images, etc.
  * before the draw() begins executing. Variables declared within setup()
  * are not accessible within other functions, including draw().
  * There can only be one setup() function for each program and it should not be called again after it's initial execution.

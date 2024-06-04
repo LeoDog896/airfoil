@@ -1286,7 +1286,7 @@ class Airfoil extends Shape {
        * The following is for the induced drag option
        */
       if (induced == true)
-        dragco = dragco + (cldin * cldin) / (3.1415926 * aspr * 0.85);
+        dragco = dragco + (cldin * cldin) / (Math.PI * aspr * 0.85);
 
       /**
        * If the velocity is 0 then the dragCoefficient will be 0
@@ -1702,7 +1702,7 @@ class Ellipse extends Shape {
       if (reCorrection == true)
         dragco = dragco * Math.pow(50000 / reynolds, 0.11);
       if (induced == true)
-        dragco = dragco + (cldin * cldin) / (3.1415926 * aspr * 0.85);
+        dragco = dragco + (cldin * cldin) / (Math.PI * aspr * 0.85);
     }
 
     return dragco;
@@ -2011,7 +2011,7 @@ class Plate extends Shape {
       if (reCorrection == true)
         dragco = dragco * Math.pow(50000 / reynolds, 0.11);
       if (induced == true)
-        dragco = dragco + (cldin * cldin) / (3.1415926 * aspr * 0.85);
+        dragco = dragco + (cldin * cldin) / (Math.PI * aspr * 0.85);
     }
 
     return dragco;
@@ -2517,7 +2517,7 @@ class Cylinder extends Shape {
      * Induced drag calculation
      */
     if (induced == true)
-      dragco = dragco + (cldin * cldin) / (3.1415926 * aspr * 0.85);
+      dragco = dragco + (cldin * cldin) / (Math.PI * aspr * 0.85);
 
     return dragco;
   }
@@ -2688,7 +2688,7 @@ class Ball extends Shape {
     var rval = this.getRVal();
     var spin = this.getSpin();
     var gamval =
-      (4.0 * 3.1415926 * 3.1415926 * spin * rval * rval) / (vfsd / vconv);
+      (4.0 * Math.PI * Math.PI * spin * rval * rval) / (vfsd / vconv);
     var gamval = gamval * spindr;
     return gamval;
   }
@@ -2915,7 +2915,7 @@ class Ball extends Shape {
     }
 
     if (induced == true)
-      dragco = dragco + (cldin * cldin) / (3.1415926 * aspr * 0.85);
+      dragco = dragco + (cldin * cldin) / (Math.PI * aspr * 0.85);
 
     return dragco;
   }

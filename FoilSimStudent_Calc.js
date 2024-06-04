@@ -1,4 +1,4 @@
-const pi = 3.1415926;
+const pi = Math.PI;
 
 function getVelocity() {
   var stringVelocity = document.getElementById("speedText").value;
@@ -22,8 +22,8 @@ function getAngle() {
 }
 
 function getCamber() {
-  var stringcamber = document.getElementById("camberText").value;
-  var camber = parseFloat(stringcamber);
+  const stringCamber = document.getElementById("camberText").value;
+  var camber = parseFloat(stringCamber);
 
   return camber;
 }
@@ -98,7 +98,7 @@ function calculateQ0S(velocity, vconv, altitude) {
 }
 
 function getConvdr() {
-  const pi = 3.1415926;
+  const pi = Math.PI;
   var convdr = pi / 180;
 
   return convdr;
@@ -152,7 +152,7 @@ function getGamVal() {
 
 function calculateLiftCoefficient() {
   //obtain the inputs
-  const pi = 3.1415926;
+  const pi = Math.PI;
 
   var angle = getAngle();
 
@@ -193,7 +193,7 @@ function calculateLiftCoefficient() {
 
 function calculateLift() {
   //obtain the inputs
-  const pi = 3.1415926;
+  const pi = Math.PI;
   var velocity = getVelocity();
   var altitude = getAltitude();
   var wingArea = getWingArea();
@@ -545,7 +545,7 @@ function calculateDragCoefficient(camd, thkd, alfd) {
 
   dragco = dragco * Math.pow(50000 / reynolds, 0.11);
   dragco =
-    dragco + (liftCoefficient * liftCoefficient) / (3.1415926 * aspr * 0.85);
+    dragco + (liftCoefficient * liftCoefficient) / (Math.PI * aspr * 0.85);
 
   stringDragCoefficient = dragco.toFixed(4);
   document.getElementById("cDragBox").value = stringDragCoefficient;
@@ -554,7 +554,7 @@ function calculateDragCoefficient(camd, thkd, alfd) {
 }
 
 function calculateDrag() {
-  const pi = 3.1415926;
+  const pi = Math.PI;
   var velocity = getVelocity();
   var altitude = getAltitude();
   var wingArea = getWingArea();
@@ -604,7 +604,7 @@ function calculateViscosity(mu0, ts0) {
 
 function calculateReynolds() {
   //obtain the inputs
-  const pi = 3.1415926;
+  const pi = Math.PI;
   var velocity = getVelocity();
   var altitude = getAltitude();
   var angle = getAngle();
@@ -781,7 +781,7 @@ function genFlow() {
   var slope;
   var xvec;
   var yvec;
-  var pid2 = 3.1415926 / 2.0;
+  var pid2 = Math.PI / 2.0;
   var fnew, ynew, yold, rfac, deriv;
   var deriv;
 

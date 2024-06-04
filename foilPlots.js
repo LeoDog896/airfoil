@@ -3985,7 +3985,7 @@ function getDrag(cldin) {
 
     if (induced == true) {
       // induced drag coefficient  factor = .85 for rectangle
-      dragco = dragco + (cldin * cldin) / (3.1415926 * aspr * 0.85);
+      dragco = dragco + (cldin * cldin) / (Math.PI * aspr * 0.85);
     }
   }
 
@@ -4026,7 +4026,7 @@ function getClPlot(camb, thic, angl) {
     stfact = 0.5 - 0.1 * angl - 0.005 * angl * angl;
   }
 
-  number = (stfact * gamc * 4.0 * 3.1415926) / crdc;
+  number = (stfact * gamc * 4.0 * Math.PI) / crdc;
 
   if (ar == true) {
     // correction for low aspect ratio
